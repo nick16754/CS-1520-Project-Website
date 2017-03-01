@@ -1,17 +1,9 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
 }
 
 
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -19,8 +11,6 @@ body {
   left: 0;
   z-index: 20;
 }
-
-/* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
@@ -33,10 +23,7 @@ body {
   width: auto;
 }
 
-/* MARKETING CONTENT
--------------------------------------------------- */
 
-/* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
@@ -53,25 +40,17 @@ body {
 }
 
 
-/* Featurettes
-------------------------- */
-
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 80px 0;
 }
-
-/* Thin out the marketing headings */
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
 }
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
 
 @media (min-width: 768px) {
-  /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
   }
@@ -83,8 +62,6 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
-
-  /* The navbar becomes detached from the top, so we round the corners */
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
@@ -101,16 +78,21 @@ body {
 }
 
 
-/* Contact Form (added by Nick)
-------------------------- */
+
+#navbar a {
+  font-family: monospace;
+  font-size: 125%;
+}
+
+.navbar-brand:hover {
+  font-size: 200%;
+  font-weight: bolder;
+}
 
 .contact-form {
   margin: 80px 375px;
 }
 
-/* Cover Photo (added by Nick)
-------------------------- */
-
-.cover-photo {
-  
+#spanish a {
+  font-size: 200%;
 }
