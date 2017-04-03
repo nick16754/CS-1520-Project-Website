@@ -1,6 +1,7 @@
 body {
   padding-bottom: 40px;
-  color: #5a5a5a;
+  background-color: #1c2957;
+  color: #cdb87d;
 }
 
 
@@ -87,10 +88,6 @@ body {
 .navbar-brand:hover {
   font-size: 200%;
   font-weight: bolder;
-}
-
-.contact-form {
-  margin: 80px 375px;
 }
 
 #spanish a {

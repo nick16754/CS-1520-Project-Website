@@ -1,3 +1,7 @@
+<?php
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -121,7 +125,7 @@
             encanta el idioma y las culturas que lo hablan.
           </p>
           <a href="https://www.iesabroad.org/study-abroad/blogs/author/202696" target="_blank">Visit My Official IES Madrid Blog!</a>
-          <img class="featurette-image img-responsive center-block" src="images/blog_page1.jpg" alt="Me at the Aqueduct in Segovia">
+          <img class="featurette-image img-responsive center-block" src="images/blog_page1.jpg" alt="My IES Abroad Blog Page">
         </div>
         <div class="col-md-5 col-md-pull-7">
           <img class="featurette-image img-responsive center-block" src="images/segovia_aqueduct.jpg" alt="Me at the Aqueduct in Segovia">
@@ -155,19 +159,52 @@
 
       <hr class="featurette-divider">
 
+      <div class="row featurette" id="suggestions">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Suggestions <span class="text-muted">Open-minded.</span></h2>
+          <p class="lead">
+            What should I do to improve? Send me your suggestions for improvements to this site, subjects I should study, musical gear I
+            you think I would like, records I should own...anything at all!!!
+          </p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <?php
+            if (null == isset($_POST['Submit'])) {
+          ?>
+          <form name="suggest-form" onsubmit="return validateSuggest()" method="post" enctype="text/plain">
+            Name:<br>
+            <input type="text" name="name" size="50"><br>
+            E-Mail:<br>
+            <input type="text" name="mail" size="50"><br>
+            Suggestion:<br>
+            <textarea type="text" name="suggestion" rows="4" cols="52"></textarea><br>
+            <input type="submit" value="Send">
+          </form>
+        </div>
+        <?php
+          }
+          else {
+            echo "<h2>Thank You For Your Suggestion!</h2>";
+          }
+        ?>
+      </div>
+
+      <hr class="featurette-divider">
 
       <!-- CONTACT FORM (added by Nick)-->
-      <div class="contact-form" id="contact">
-        <h2 class="featurette-heading">Contact Me.</h2>
-        <form name="email-message" action="mailto:nct11@pitt.edu" onsubmit="return validateForm()" method="post" enctype="text/plain">
-          Name:<br>
-          <input type="text" name="name" size="50"><br>
-          E-Mail:<br>
-          <input type="text" name="mail" size="50"><br>
-          Message:<br>
-          <textarea type="text" name="message" rows="4" cols="52"></textarea><br>
-          <input type="submit" value="Send">
-        </form>
+      <div class="row featurette" id="contact">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Contact Me.</h2>
+          <form name="email-message" action="mailto:nct11@pitt.edu" onsubmit="return validateContact()" method="post" enctype="text/plain">
+            Name:<br>
+            <input type="text" name="name" size="50"><br>
+            E-Mail:<br>
+            <input type="text" name="mail" size="50"><br>
+            Message:<br>
+            <textarea type="text" name="message" rows="4" cols="52"></textarea><br>
+            <input type="submit" value="Send">
+          </form>
+        </div>
       </div>
 
       <footer>
