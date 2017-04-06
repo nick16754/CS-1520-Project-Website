@@ -107,7 +107,7 @@
           </p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="images/sennott.jpg" alt="Sennott Square, home of the Pitt CS Department">
+          <img class="featurette-image img-responsive center-block" src="images/sennott.jpg" alt="Sennott Square, home of the Pitt CS Department"><br>
           <img class="featurette-image img-responsive center-block" src="images/ARVR_game.png" alt="Screenshot of AR/VR sterile compounding game">
         </div>
       </div>
@@ -128,7 +128,7 @@
           <img class="featurette-image img-responsive center-block" src="images/blog_page1.jpg" alt="My IES Abroad Blog Page">
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="images/segovia_aqueduct.jpg" alt="Me at the Aqueduct in Segovia">
+          <img class="featurette-image img-responsive center-block" src="images/segovia_aqueduct.jpg" alt="Me at the Aqueduct in Segovia"><br>
           <iframe width="460" height="350" src="https://www.youtube.com/embed/aGSRh2SAku8" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
@@ -142,7 +142,7 @@
             I love traveling and in the past four years have visited Germany, Belgium, France, Italy, Austria, Quebec, and of course Spain.
             My next trip is a return to Paris, France this upcoming June, and I cannot be more excited. I'm also a huge fan of music
             and have a vast vinyl record collection of albums spanning genres from Rock to Jazz to Folk to Motown. On that note,
-            I am a massive Bruce Springsteen fan and have seen him live nine times! I also love to play the guitar (and pretend like
+            I am a MASSIVE Bruce Springsteen fan and have seen him live nine times! I also love to play the guitar (and pretend like
             I can play the piano), and I have an expanding collection of musical instruments. My prized possession is my Martin 00-15
             acoustic guitar, "Loretta". I also have an American Fender Telecaster Custom electric guitar, a Juan Alvarez classical guitar
             that I purchased in Madrid, a vintage Kay Venetian mandolin, and my family's brand new Cunningham Baby Grand Piano. I consider
@@ -151,8 +151,8 @@
           </p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="images/guitar_brussels.jpg" alt="Strumming on a guitar in Brussels">
-          <img class="featurette-image img-responsive center-block" src="images/record_player.jpg" alt="Our family stereo system">
+          <img class="featurette-image img-responsive center-block" src="images/guitar_brussels.jpg" alt="Strumming on a guitar in Brussels"><br>
+          <img class="featurette-image img-responsive center-block" src="images/record_player.jpg" alt="Our family stereo system"><br>
           <img class="featurette-image img-responsive center-block" src="images/phono_preamp.jpg" alt="Tube phono preamp assembled by me">
         </div>
       </div>
@@ -161,9 +161,9 @@
 
       <div class="row featurette" id="suggestions">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Suggestions <span class="text-muted">Open-minded.</span></h2>
+          <h2 class="featurette-heading">Suggestions. <span class="text-muted">Open-minded.</span></h2>
           <p class="lead">
-            What should I do to improve? Send me your suggestions for improvements to this site, subjects I should study, musical gear I
+            What should I do to improve? Send me your suggestions for this site, subjects I should study, musical gear
             you think I would like, records I should own...anything at all!!!
           </p>
         </div>
@@ -174,11 +174,20 @@
           <form name="suggest-form" onsubmit="return validateSuggest()" method="post" enctype="text/plain">
             Name:<br>
             <input type="text" name="name" size="50"><br>
-            E-Mail:<br>
-            <input type="text" name="mail" size="50"><br>
-            Suggestion:<br>
+            Suggestion For:<br>
+            <input type="checkbox" name="This Site" value="This Site">This Site&emsp;
+            <input type="checkbox" name="CS" value="Computer Science">Computer Science<br>
+            <input type="checkbox" name="Spanish" value="Spanish">Spanish&emsp;
+            <input type="checkbox" name="Pitt" value="Pitt">Pitt<br>
+            <input type="checkbox" name="Study Abroad" value="Study Abroad">Study Abroad&emsp;
+            <input type="checkbox" name="Vinyl" value="Vinyl">Vinyl<br>
+            <input type="checkbox" name="Guitar" value="Guitar">Guitar&emsp;
+            <input type="checkbox" name="Audiophile" value="Audiophile">Audiophile<br>
+            <input type="checkbox" name="Cats" value="Cats">Cats&emsp;
+            <input type="checkbox" name="Other" value="Other">Other<br>
+            Suggestion Description:<br>
             <textarea type="text" name="suggestion" rows="4" cols="52"></textarea><br>
-            <input type="submit" value="Send">
+            <input type="submit" value="Suggest It!">
           </form>
         </div>
         <?php
@@ -194,7 +203,12 @@
       <!-- CONTACT FORM (added by Nick)-->
       <div class="row featurette" id="contact">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Contact Me.</h2>
+          <h2 class="featurette-heading">Contact Me. <span class="text-muted">Available to Talk.</span></h2>
+          <p class="lead">
+            If you'd like to reach me and discuss anything you've seen on this site, send me an email! I'd love to hear from you.
+          </p>
+        </div>
+        <div class="col-md-5">
           <form name="email-message" action="mailto:nct11@pitt.edu" onsubmit="return validateContact()" method="post" enctype="text/plain">
             Name:<br>
             <input type="text" name="name" size="50"><br>
@@ -206,6 +220,8 @@
           </form>
         </div>
       </div>
+
+      <hr class="featurette-divider">
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
