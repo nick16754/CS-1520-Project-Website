@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Pitt CS 1520 Project">
+    <meta name="author" content="Nicholas C. Taglianetti">
     <link rel="icon" href="images/Electric-Guitar.ico">
 
-    <title>CS 1520 Project</title>
+    <title>Nick Taglianetti</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/nick_style.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <div class="navbar-wrapper">
       <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -43,13 +43,14 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                   <ul class="dropdown-menu">
+                    <li><a href="#suggestions">Suggestions</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="files/NicholasTaglianetti_resume.pdf" target="_blank">Download Résumé</a></li>
                     <li role="separator" class="divider"></li>
                     <li class="dropdown-header">External Links</li>
                     <li><a href="https://www.iesabroad.org/study-abroad/blogs/author/202696" target="_blank">Official IES Madrid Blog</a></li>
                     <li><a href="https://github.com/nick16754" target="_blank">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/nicholas-taglianetti target="_blank"">LinkedIn</a></li>
+                    <li><a href="https://www.linkedin.com/in/nicholas-taglianetti" target="_blank">LinkedIn</a></li>
                   </ul>
                 </li>
               </ul>
@@ -203,7 +204,7 @@
       <!-- CONTACT FORM (added by Nick)-->
       <div class="row featurette" id="contact">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Contact Me. <span class="text-muted">Available to Talk.</span></h2>
+          <h2 class="featurette-heading">Contact Me. <span class="text-muted">Always Available.</span></h2>
           <p class="lead">
             If you'd like to reach me and discuss anything you've seen on this site, send me an email! I'd love to hear from you.
           </p>
