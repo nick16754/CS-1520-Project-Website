@@ -1,5 +1,33 @@
-<?php
+<?php/*
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "mydb";
 
+  $name = $_POST['name'];
+  $check_list = $_POST['check_list'];
+  $suggestion = $_POST['suggestion'];
+
+  // Create connection
+  $db = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($db->connect_error) {
+      die("Connection failed: " . $db->connect_error);
+  }
+
+  //if(!empty()) {
+      foreach($check_list as $checkbox) {
+        //echo $checkbox;
+        $sql = "INSERT INTO suggestions(name,checkbox,suggestion) VALUES ('$name','$checkbox','$suggestion')";
+      }
+      if($db->query($sql) === true) {
+        echo "Records inserted successfully.";
+      } else {
+        echo "ERROR: Could not able to execute $sql. " . $db->error;
+      }
+  //}
+
+  $db->close();*/
  ?>
 
 <!DOCTYPE html>
@@ -16,6 +44,7 @@
     <title>Nick Taglianetti</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
     <link href="css/nick_style.css" rel="stylesheet">
   </head>
 
@@ -36,7 +65,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="#summary">Home</a></li>
                 <li><a href="#computerScience">Computer Science</a></li>
                 <li><a href="#spanish">Español</a></li>
                 <li><a href="#interests">Interests</a></li>
@@ -70,9 +99,9 @@
     <div class="container marketing">
 
 
-      <div class="row">
+      <div class="row" id="summary">
         <div class="col-lg-4">
-          <img class="img-circle" src="images/pittCS.jpg" alt="Pitt Computer Science" width="200" height="200">
+          <img class="img-rounded" src="images/pittCS.jpg" alt="Pitt Computer Science" width="200" height="200">
           <h2>Computer Scientist</h2>
           <p>I am a senior Computer Science major at the University of Pittsburgh. I write clean, well-tested code in a variety of different programming languages.</p>
           <p><a class="btn btn-default" href="#computerScience" role="button">Learn More! &raquo;</a></p>
@@ -84,9 +113,9 @@
           <p><a class="btn btn-default" href="#spanish" role="button">¡Ven Conmigo! &raquo;</a></p>
         </div>
         <div class="col-lg-4">
-          <img class="img-circle" src="images/cat_records.jpg" alt="I like both cats and records." width="200" height="200">
+          <img class="img-rounded" src="images/cat_records.jpg" alt="I like both cats and records." width="200" height="200">
           <h2>Interests</h2>
-          <p>I have a wide variety of interests and hobbies. In addition to my professional skills, I am an avid traveler, musician, audiophile, and vinyl record collector...among other things!</p>
+          <p>I have a wide variety of interests and hobbies. In addition to my professional skills, I am an avid traveler, musician, audiophile, record collector and much more!</p>
           <p><a class="btn btn-default" href="#interests" role="button">See More! &raquo;</a></p>
         </div>
       </div>
@@ -172,20 +201,20 @@
           <?php
             if (null == isset($_POST['Submit'])) {
           ?>
-          <form name="suggest-form" onsubmit="return validateSuggest()" method="post" enctype="text/plain">
+          <form name="suggest-form" onsubmit="return validateSuggest()" method="post" id="suggest">
             Name:<br>
             <input type="text" name="name" size="50"><br>
             Suggestion For:<br>
-            <input type="checkbox" name="This Site" value="This Site">This Site&emsp;
-            <input type="checkbox" name="CS" value="Computer Science">Computer Science<br>
-            <input type="checkbox" name="Spanish" value="Spanish">Spanish&emsp;
-            <input type="checkbox" name="Pitt" value="Pitt">Pitt<br>
-            <input type="checkbox" name="Study Abroad" value="Study Abroad">Study Abroad&emsp;
-            <input type="checkbox" name="Vinyl" value="Vinyl">Vinyl<br>
-            <input type="checkbox" name="Guitar" value="Guitar">Guitar&emsp;
-            <input type="checkbox" name="Audiophile" value="Audiophile">Audiophile<br>
-            <input type="checkbox" name="Cats" value="Cats">Cats&emsp;
-            <input type="checkbox" name="Other" value="Other">Other<br>
+            <input type="checkbox" name="check_list" value="This Site">This Site&emsp;
+            <input type="checkbox" name="check_list" value="Computer Science">Computer Science<br>
+            <input type="checkbox" name="check_list" value="Spanish">Spanish&emsp;
+            <input type="checkbox" name="check_list" value="Pitt">Pitt<br>
+            <input type="checkbox" name="check_list" value="Study Abroad">Study Abroad&emsp;
+            <input type="checkbox" name="check_list" value="Vinyl">Vinyl<br>
+            <input type="checkbox" name="check_list" value="Guitar">Guitar&emsp;
+            <input type="checkbox" name="check_list" value="Audiophile">Audiophile<br>
+            <input type="checkbox" name="check_list" value="Cats">Cats&emsp;
+            <input type="checkbox" name="check_list" value="Other">Other<br>
             Suggestion Description:<br>
             <textarea type="text" name="suggestion" rows="4" cols="52"></textarea><br>
             <input type="submit" value="Suggest It!">
@@ -225,6 +254,10 @@
       <hr class="featurette-divider">
 
       <footer>
+        <div class="container text-center">
+          <a href="https://github.com/nick16754" target="_blank"><i class="fa fa-github-square fa-4x"></i></a>
+          <a href="https://www.linkedin.com/in/nicholas-taglianetti" target="_blank"><i class="fa fa-linkedin-square fa-4x"></i></a>
+        </div>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2017 Nicholas C. Taglianetti.</p>
       </footer>
