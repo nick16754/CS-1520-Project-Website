@@ -1,12 +1,8 @@
-<?php/*
+<?php
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "mydb";
-
-  $name = $_POST['name'];
-  $check_list = $_POST['check_list'];
-  $suggestion = $_POST['suggestion'];
+  $dbname = "ntsuggestions";
 
   // Create connection
   $db = new mysqli($servername, $username, $password, $dbname);
@@ -14,21 +10,7 @@
   if ($db->connect_error) {
       die("Connection failed: " . $db->connect_error);
   }
-
-  //if(!empty()) {
-      foreach($check_list as $checkbox) {
-        //echo $checkbox;
-        $sql = "INSERT INTO suggestions(name,checkbox,suggestion) VALUES ('$name','$checkbox','$suggestion')";
-      }
-      if($db->query($sql) === true) {
-        echo "Records inserted successfully.";
-      } else {
-        echo "ERROR: Could not able to execute $sql. " . $db->error;
-      }
-  //}
-
-  $db->close();*/
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -198,34 +180,47 @@
           </p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <?php
-            if (null == isset($_POST['Submit'])) {
-          ?>
           <form name="suggest-form" onsubmit="return validateSuggest()" method="post" id="suggest">
             Name:<br>
             <input type="text" name="name" size="50"><br>
             Suggestion For:<br>
-            <input type="checkbox" name="check_list" value="This Site">This Site&emsp;
-            <input type="checkbox" name="check_list" value="Computer Science">Computer Science<br>
-            <input type="checkbox" name="check_list" value="Spanish">Spanish&emsp;
-            <input type="checkbox" name="check_list" value="Pitt">Pitt<br>
-            <input type="checkbox" name="check_list" value="Study Abroad">Study Abroad&emsp;
-            <input type="checkbox" name="check_list" value="Vinyl">Vinyl<br>
-            <input type="checkbox" name="check_list" value="Guitar">Guitar&emsp;
-            <input type="checkbox" name="check_list" value="Audiophile">Audiophile<br>
-            <input type="checkbox" name="check_list" value="Cats">Cats&emsp;
-            <input type="checkbox" name="check_list" value="Other">Other<br>
+            <input type="checkbox" name="check_list[]" value="This Site">This Site&emsp;
+            <input type="checkbox" name="check_list[]" value="Computer Science">Computer Science<br>
+            <input type="checkbox" name="check_list[]" value="Spanish">Spanish&emsp;
+            <input type="checkbox" name="check_list[]" value="Pitt">Pitt<br>
+            <input type="checkbox" name="check_list[]" value="Study Abroad">Study Abroad&emsp;
+            <input type="checkbox" name="check_list[]" value="Vinyl">Vinyl<br>
+            <input type="checkbox" name="check_list[]" value="Guitar">Guitar&emsp;
+            <input type="checkbox" name="check_list[]" value="Audiophile">Audiophile<br>
+            <input type="checkbox" name="check_list[]" value="Cats">Cats&emsp;
+            <input type="checkbox" name="check_list[]" value="Other">Other<br>
             Suggestion Description:<br>
             <textarea type="text" name="suggestion" rows="4" cols="52"></textarea><br>
-            <input type="submit" value="Suggest It!">
+            <input type="submit" name="submit-suggestion" value="Suggest It!">
           </form>
+          <?php
+            if (isset($_POST['submit-suggestion'])) {
+              $flag = false;
+              $name = $_POST['name'];
+              $suggestion = $_POST['suggestion'];
+
+              if(isset($_POST['submit-suggestion'])){
+                if(!empty($_POST['check_list'])){
+                    foreach($_POST['check_list'] as $selected) {
+                      $sql = "INSERT INTO suggestion_table(suggestion_name,suggestion_type,suggestion_description) VALUES ('$name','$selected','$suggestion')";
+                      $flag = true;
+                    }
+                    if($db->query($sql) === false) {
+                      echo "ERROR: Could not able to execute $sql. " . $db->error;
+                    }
+                }
+              }
+              if($flag) {
+                echo "<h3>Thank You For Your Suggestion!</h3>";
+              }
+            }
+          ?>
         </div>
-        <?php
-          }
-          else {
-            echo "<h2>Thank You For Your Suggestion!</h2>";
-          }
-        ?>
       </div>
 
       <hr class="featurette-divider">
@@ -246,8 +241,13 @@
             <input type="text" name="mail" size="50"><br>
             Message:<br>
             <textarea type="text" name="message" rows="4" cols="52"></textarea><br>
-            <input type="submit" value="Send">
+            <input type="submit" name="submit-email" value="Send">
           </form>
+          <?php
+            if (isset($_POST['submit-email'])) {
+              echo "<h3>Thank You For Your Email!</h3>";
+            }
+          ?>
         </div>
       </div>
 

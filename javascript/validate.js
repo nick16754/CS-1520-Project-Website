@@ -23,15 +23,22 @@ function validateContact() {
 function validateSuggest() {
     var name = document.forms["suggest-form"]["name"].value;
     var suggestion = document.forms["suggest-form"]["suggestion"].value;
-    var form = document.getElementById("suggest");
+    var checkboxes = document.getElementsByName("check_list[]");
+    var check_flag = false;
+
     if (name == "") {
       alert("Name field in 'Suggestions' cannot be blank.");
       return false;
     }
 
-    if(!this.form.check_list.checked) {
-         alert("A checkbox in 'Suggestions' must be checked.");
-         return false;
+    for(var i=0; i<checkboxes.length; i++) {
+        if(checkboxes[i].checked) {
+            check_flag = true;
+            break;
+        }
+    }
+    if(!check_flag) {
+      alert("A checkbox in 'Suggestions' must be checked.");
     }
 
     if (suggestion == "") {
